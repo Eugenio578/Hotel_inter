@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Hotel Inter Chimoio — 4 Estrelas · Moçambique</title>
+<meta name="description" content="Hotel Inter Chimoio 4 estrelas. Quartos, restaurante Vila Pery, bar, piscina rooftop. Av. 25 de Setembro, Chimoio, Moçambique.">
+<meta property="og:title" content="Hotel Inter Chimoio — 4 Estrelas">
+<meta property="og:description" content="Sofisticação no coração de Moçambique. Reserve já.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#C9A84C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══ RESET TOTAL ══ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+body {
+  font-family: 'Jost', sans-serif;
+  background: #FDFBF7;
+  color: #3D3025;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══ TOKENS ══ */
+:root {
+  --gold: #C9A84C;
+  --gold-l: #E8C87A;
+  --copper: #B5672A;
+  --ivory: #F5F0E8;
+  --ivory2: #EDE7D9;
+  --dk: #1A1410;
+  --dk2: #2C2318;
+  --dk3: #221A12;
+  --dk4: #180E08;
+  --dk5: #0C0806;
+  --mid: #6B5B3E;
+  --wh: #FDFBF7;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --pad: 20px;
+}
+
+/* ══ PROGRESS ══ */
+#prog {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  height: 2px; background: var(--gold); width: 0%;
+  pointer-events: none; box-shadow: 0 0 8px rgba(201,168,76,.5);
+}
+
+/* ══ NAV ══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px var(--pad);
+  width: 100%; max-width: 100%;
+  transition: all .45s var(--ease);
+}
+nav.scrolled {
+  background: rgba(18,12,8,.97);
+  backdrop-filter: blur(16px);
+  padding: 12px var(--pad);
+  border-bottom: 1px solid rgba(201,168,76,.15);
+  box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+.nav-logo { text-decoration: none; flex-shrink: 0; line-height: 1.2; }
+.nav-logo-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-weight: 400; letter-spacing: .12em;
+  color: #fff; text-transform: uppercase; display: block;
+}
+.nav-logo-sub {
+  font-size: 8px; letter-spacing: .32em; color: var(--gold);
+  font-weight: 300; text-transform: uppercase; display: block; margin-top: 2px;
+}
+.ham {
+  display: flex; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 6px; background: none; border: none;
+  flex-shrink: 0;
+}
+.ham span {
+  display: block; width: 22px; height: 1px; background: #fff;
+  transition: all .3s var(--ease); transform-origin: center;
+}
+.ham.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.ham.open span:nth-child(2) { opacity: 0; width: 0; }
+.ham.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ══ FULLSCREEN MENU ══ */
+.fsmenu {
+  position: fixed; inset: 0; z-index: 190;
+  background: var(--dk5);
+  display: flex; flex-direction: column;
+  opacity: 0; pointer-events: none;
+  transition: opacity .4s ease;
+  overflow: hidden; width: 100%;
+}
+.fsmenu.open { opacity: 1; pointer-events: all; }
+.fsm-inner {
+  display: flex; flex-direction: column;
+  justify-content: center; flex: 1;
+  padding: 90px var(--pad) 32px; gap: 4px;
+}
+.fsm-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 8vw, 44px);
+  font-weight: 300; color: rgba(255,255,255,.15);
+  text-decoration: none; line-height: 1.25;
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  transform: translateX(-20px); opacity: 0;
+  transition: color .3s, transform .55s var(--ease), opacity .55s ease;
+}
+.fsmenu.open .fsm-link { transform: translateX(0); opacity: 1; }
+.fsmenu.open .fsm-link:nth-child(1) { transition-delay: .04s; }
+.fsmenu.open .fsm-link:nth-child(2) { transition-delay: .08s; }
+.fsmenu.open .fsm-link:nth-child(3) { transition-delay: .12s; }
+.fsmenu.open .fsm-link:nth-child(4) { transition-delay: .16s; }
+.fsmenu.open .fsm-link:nth-child(5) { transition-delay: .20s; }
+.fsmenu.open .fsm-link:nth-child(6) { transition-delay: .24s; }
+.fsmenu.open .fsm-link:nth-child(7) { transition-delay: .28s; }
+.fsm-link:hover { color: #fff; }
+.fsm-num {
+  font-family: 'Jost', sans-serif; font-size: 9px;
+  letter-spacing: .2em; color: rgba(255,255,255,.16);
+  font-weight: 300; min-width: 20px;
+}
+.fsm-foot {
+  padding: 20px var(--pad);
+  border-top: 1px solid rgba(255,255,255,.05);
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.fsm-foot p { font-size: 11px; color: rgba(255,255,255,.25); line-height: 2.2; font-weight: 300; }
+.fsm-foot a { color: rgba(255,255,255,.25); text-decoration: none; transition: color .3s; }
+.fsm-foot a:hover { color: var(--gold); }
+.fsm-badge {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-style: italic; color: rgba(201,168,76,.1);
+}
+
+/* ══ HERO ══ */
+.hero {
+  width: 100%; max-width: 100%;
+  height: 100svh; min-height: 600px;
+  position: relative;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; overflow: hidden;
+}
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 35%;
+  filter: brightness(.4) saturate(1.1);
+  display: block;
+}
+.hero-vignette {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12,8,6,.98) 0%,
+    rgba(12,8,6,.5) 38%,
+    rgba(12,8,6,.1) 65%,
+    rgba(12,8,6,.25) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 var(--pad) 56px;
+  width: 100%; max-width: 100%;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+  animation: hfu 1s .2s both;
+}
+.hero-eyebrow-line { width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.hero-eyebrow span {
+  font-size: 8.5px; letter-spacing: .36em; color: var(--gold);
+  text-transform: uppercase; font-weight: 500;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 16vw, 80px);
+  font-weight: 300; color: #fff;
+  line-height: .92; letter-spacing: -.02em;
+  margin-bottom: 24px;
+  animation: hfu 1s .35s both;
+}
+.hero-title .l2 { display: block; font-style: italic; color: var(--gold-l); }
+.hero-title .l3 { display: block; }
+.hero-desc {
+  font-size: 12px; font-weight: 300; line-height: 1.9;
+  color: rgba(255,255,255,.5); margin-bottom: 36px;
+  animation: hfu 1s .5s both;
+  max-width: 100%;
+}
+.hero-btns {
+  display: flex; flex-direction: column; gap: 10px;
+  animation: hfu 1s .65s both;
+}
+.hero-scroll {
+  position: absolute; bottom: 24px; right: var(--pad); z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: hfu 1s 1.1s both;
+}
+.scr-track {
+  width: 1px; height: 48px;
+  background: rgba(201,168,76,.18); position: relative; overflow: hidden;
+}
+.scr-track::after {
+  content: ''; position: absolute; top: -100%; left: 0;
+  width: 100%; height: 50%; background: var(--gold);
+  animation: scrDrop 2.5s ease-in-out infinite;
+}
+.scr-label {
+  font-size: 7.5px; letter-spacing: .4em;
+  color: rgba(255,255,255,.25); writing-mode: vertical-rl; text-transform: uppercase;
+}
+
+/* Hero badge */
+.hero-badge {
+  position: absolute; top: 74px; right: var(--pad); z-index: 2;
+  width: 60px; height: 60px;
+  animation: hfu 1s .9s both;
+}
+.hero-badge svg { width: 100%; height: 100%; animation: spin 22s linear infinite; }
+
+/* ══ BUTTONS ══ */
+.btn-g {
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  background: var(--gold); color: var(--dk);
+  padding: 16px var(--pad);
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  font-weight: 600; text-decoration: none;
+  font-family: 'Jost', sans-serif; border: none; cursor: pointer;
+  width: 100%; transition: background .3s;
+  position: relative; overflow: hidden;
+}
+.btn-g:hover, .btn-g:active { background: var(--gold-l); }
+.btn-o {
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  border: 1px solid rgba(255,255,255,.2); color: #fff;
+  padding: 16px var(--pad);
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  font-weight: 300; text-decoration: none;
+  font-family: 'Jost', sans-serif; width: 100%; transition: border-color .3s, color .3s;
+}
+.btn-o:hover, .btn-o:active { border-color: var(--gold); color: var(--gold); }
+.btn-g svg, .btn-o svg { flex-shrink: 0; }
+
+/* ══ BRAND STRIP ══ */
+.bstrip {
+  background: var(--gold); padding: 14px var(--pad);
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px; overflow: hidden; width: 100%;
+}
+.bs {
+  display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+  font-size: 8px; letter-spacing: .22em; font-weight: 600;
+  text-transform: uppercase; color: var(--dk);
+}
+.bs svg { width: 11px; height: 11px; flex-shrink: 0; }
+.bsep { width: 3px; height: 3px; background: var(--dk); border-radius: 50%; opacity: .22; flex-shrink: 0; }
+
+/* ══ BOOKING ══ */
+.bwrap { background: var(--dk2); border-top: 1px solid rgba(201,168,76,.1); width: 100%; }
+.bhdr {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px var(--pad); cursor: pointer; user-select: none;
+}
+.bhdr h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 400; color: #fff; letter-spacing: .08em;
+}
+.bhdr-ico {
+  width: 26px; height: 26px; border: 1px solid rgba(201,168,76,.28);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform .3s, background .3s;
+}
+.bhdr.open .bhdr-ico { transform: rotate(45deg); background: rgba(201,168,76,.1); }
+.bhdr-ico svg { width: 11px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.bbody { max-height: 0; overflow: hidden; transition: max-height .5s var(--ease); }
+.bbody.open { max-height: 500px; }
+.binner { padding: 0 var(--pad) 24px; display: flex; flex-direction: column; gap: 12px; }
+.f2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fld { display: flex; flex-direction: column; gap: 4px; }
+.fld label {
+  font-size: 7.5px; letter-spacing: .3em; text-transform: uppercase;
+  color: rgba(255,255,255,.28); font-weight: 500;
+}
+.fld input, .fld select {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(201,168,76,.13);
+  color: #fff; padding: 11px 12px; font-size: 13px;
+  font-family: 'Jost', sans-serif; outline: none;
+  -webkit-appearance: none; border-radius: 0;
+  transition: border-color .3s; width: 100%;
+}
+.fld input:focus, .fld select:focus { border-color: var(--gold); }
+.fld select option { background: #2C2318; }
+
+/* ══ SECTIONS ══ */
+.sec { padding: 72px var(--pad); width: 100%; }
+.s-lt { background: var(--ivory); }
+.s-wh { background: var(--wh); }
+.s-iv2 { background: var(--ivory2); }
+.s-dk { background: var(--dk3); }
+.s-dkr { background: var(--dk); }
+.s-dkk { background: var(--dk4); }
+.s-md { background: var(--dk2); }
+
+/* Eyebrow */
+.ey { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.ey::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.ey span { font-size: 8.5px; letter-spacing: .32em; color: var(--gold); text-transform: uppercase; font-weight: 500; }
+.ey-c { justify-content: center; }
+.ey-c::before { display: none; }
+.ey-c::after { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+
+/* Headings */
+.h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 9vw, 52px);
+  font-weight: 300; line-height: .97;
+  letter-spacing: -.02em; color: var(--dk); margin-bottom: 18px;
+}
+.h2 em { font-style: italic; color: var(--copper); }
+.h2w { color: #fff; }
+.h2w em { color: var(--gold-l); }
+.bt { font-size: 13px; font-weight: 300; line-height: 1.9; color: var(--mid); }
+.btw { color: rgba(255,255,255,.44); }
+.gbar { width: 32px; height: 1.5px; background: var(--gold); margin: 18px 0; }
+
+/* Reveal */
+.r { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s var(--ease); }
+.r.d1 { transition-delay: .08s; } .r.d2 { transition-delay: .16s; }
+.r.d3 { transition-delay: .24s; } .r.d4 { transition-delay: .32s; }
+.r.on { opacity: 1; transform: translateY(0); }
+
+/* ══ ABOUT ══ */
+.about-img {
+  margin: 36px 0 32px;
+  height: 280px; width: 100%;
+  position: relative; overflow: hidden;
+}
+.about-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+}
+.about-img-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,20,16,.7) 0%, transparent 55%);
+}
+.about-img-cap {
+  position: absolute; bottom: 16px; left: 16px; right: 16px; z-index: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; font-style: italic; color: rgba(255,255,255,.7);
+}
+.stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  border-top: 1px solid var(--ivory2); border-left: 1px solid var(--ivory2);
+}
+.stat {
+  padding: 22px 10px; text-align: center;
+  border-right: 1px solid var(--ivory2);
+  border-bottom: 1px solid var(--ivory2);
+  background: var(--wh);
+}
+.stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 300; color: var(--dk);
+  line-height: 1; letter-spacing: -.03em;
+}
+.stat-n sup { font-size: 15px; color: var(--gold); vertical-align: 4px; }
+.stat-l { font-size: 7.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--mid); margin-top: 6px; font-weight: 500; }
+
+/* ══ ROOMS ══ */
+.rooms { display: flex; flex-direction: column; gap: 3px; margin-top: 40px; }
+.room { display: block; text-decoration: none; position: relative; overflow: hidden; }
+.room-img { height: 270px; width: 100%; position: relative; overflow: hidden; }
+.room-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform .7s var(--ease);
+  filter: brightness(.75) saturate(1.1);
+}
+.room:hover .room-img img { transform: scale(1.04); }
+.room-fb { position: absolute; inset: 0; z-index: 0; }
+.room-img img { position: relative; z-index: 1; }
+.room-dots {
+  position: absolute; inset: 0; z-index: 2; opacity: .05;
+  background-image: radial-gradient(var(--gold) 1.5px, transparent 1.5px);
+  background-size: 20px 20px; pointer-events: none;
+}
+.room-shade {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.18) 52%, transparent 100%);
+}
+.room-info {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 16px;
+  z-index: 4; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px;
+}
+.room-badge {
+  font-size: 7.5px; letter-spacing: .3em; color: var(--gold);
+  text-transform: uppercase; font-weight: 500;
+  border: 1px solid rgba(201,168,76,.3);
+  background: rgba(201,168,76,.08);
+  padding: 3px 8px; display: inline-block; margin-bottom: 7px;
+}
+.room-badge.vip { border-color: rgba(201,168,76,.7); background: rgba(201,168,76,.15); }
+.room-nm {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 300; color: #fff; line-height: 1.05;
+}
+.room-feats { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.room-feat { font-size: 8.5px; letter-spacing: .1em; color: rgba(255,255,255,.4); }
+.room-pr { text-align: right; flex-shrink: 0; }
+.room-pr-from {
+  font-size: 7.5px; letter-spacing: .16em; color: rgba(255,255,255,.26);
+  text-transform: uppercase; display: block; margin-bottom: 1px;
+}
+.room-pr-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 300; color: var(--gold-l); line-height: 1;
+}
+.room-pr-cur { font-size: 8px; color: rgba(255,255,255,.28); display: block; margin-top: 2px; }
+.room-foot {
+  background: rgba(201,168,76,.055);
+  border-top: 1px solid rgba(201,168,76,.1);
+  padding: 12px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.room-foot span { font-size: 8.5px; letter-spacing: .13em; color: rgba(255,255,255,.26); text-transform: uppercase; font-weight: 300; }
+.room-arrow { color: var(--gold); font-size: 16px; transition: transform .3s; }
+.room:hover .room-arrow { transform: translateX(4px); }
+
+/* Includes */
+.room-inc { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; }
+.ri {
+  background: var(--dk2); padding: 14px 16px;
+  border: 1px solid rgba(201,168,76,.06);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  transition: background .3s;
+}
+.ri:hover { background: rgba(255,255,255,.04); }
+.ri svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+.ri-t { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.44); flex: 1; }
+.ri-ck { color: var(--gold); font-size: 11px; flex-shrink: 0; }
+
+/* ══ AMENITIES ══ */
+.amen-g {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 40px; background: var(--ivory2);
+}
+.amen { background: var(--wh); padding: 24px 18px; transition: background .3s; }
+.amen:hover { background: var(--ivory); }
+.amen.wide { grid-column: 1 / -1; }
+.amen-ico {
+  width: 36px; height: 36px; border: 1px solid rgba(201,168,76,.25);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+}
+.amen-ico svg { width: 15px; height: 15px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; }
+.amen-t { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--dk); margin-bottom: 4px; }
+.amen-b { font-size: 10.5px; font-weight: 300; color: var(--mid); line-height: 1.7; }
+
+/* ══ MARQUEE ══ */
+.mqsec {
+  background: var(--dk); padding: 26px 0; overflow: hidden;
+  border-top: 1px solid rgba(201,168,76,.08);
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  width: 100%;
+}
+.mqt { display: flex; white-space: nowrap; animation: mq 30s linear infinite; }
+.mqi {
+  display: inline-flex; align-items: center; gap: 16px;
+  padding: 0 28px; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,.13);
+}
+.mq-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; opacity: .4; flex-shrink: 0; }
+
+/* ══ RESTAURANT ══ */
+.rest-img {
+  margin: 40px calc(-1 * var(--pad)) 0;
+  height: 270px; width: calc(100% + var(--pad) * 2);
+  position: relative; overflow: hidden;
+}
+.rest-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 60%;
+  display: block; filter: brightness(.62) saturate(1.2);
+}
+.rest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--dk2) 0%, transparent 55%);
+}
+.rest-cap { position: absolute; bottom: 20px; left: 20px; }
+.rest-cap h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 300; font-style: italic;
+  color: #fff; line-height: 1.1; margin-bottom: 4px;
+}
+.rest-cap p { font-size: 8.5px; letter-spacing: .25em; color: var(--gold); text-transform: uppercase; }
+.hours {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  margin-top: 28px; background: rgba(201,168,76,.06);
+}
+.hour { background: rgba(255,255,255,.02); padding: 14px; border: 1px solid rgba(201,168,76,.06); }
+.hour-l { font-size: 8px; letter-spacing: .25em; color: var(--gold); text-transform: uppercase; font-weight: 500; margin-bottom: 3px; }
+.hour-t { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 300; color: #fff; }
+.menu-list { display: flex; flex-direction: column; margin-top: 28px; }
+.mr {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.mr:last-child { border-bottom: none; }
+.mr-n { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: #fff; margin-bottom: 2px; }
+.mr-d { font-size: 9.5px; font-weight: 300; color: rgba(255,255,255,.3); line-height: 1.5; }
+.mr-p { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--gold); white-space: nowrap; font-weight: 300; margin-top: 2px; flex-shrink: 0; }
+
+/* ══ BAR ══ */
+.bar-img {
+  height: 300px; width: calc(100% + var(--pad) * 2);
+  margin: 0 calc(-1 * var(--pad));
+  position: relative; overflow: hidden;
+}
+.bar-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block; filter: brightness(.55) saturate(1.2);
+}
+.bar-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--dk) 0%, transparent 52%);
+}
+.bar-feats { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
+.bf {
+  background: rgba(255,255,255,.022); border: 1px solid rgba(201,168,76,.08);
+  padding: 15px 16px; display: flex; align-items: center; gap: 14px;
+  transition: background .3s;
+}
+.bf:hover { background: rgba(255,255,255,.05); }
+.bf-ico {
+  width: 32px; height: 32px; border: 1px solid rgba(201,168,76,.24);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.bf-ico svg { width: 13px; height: 13px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.bf-t { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #fff; margin-bottom: 2px; }
+.bf-b { font-size: 10px; font-weight: 300; color: rgba(255,255,255,.3); line-height: 1.55; }
+.bar-q {
+  margin-top: 26px; padding: 20px;
+  background: rgba(201,168,76,.04); border-left: 2px solid var(--gold);
+  position: relative;
+}
+.bar-q::before {
+  content: '\201C'; position: absolute; top: 8px; right: 14px;
+  font-family: 'Cormorant Garamond', serif; font-size: 50px;
+  color: rgba(201,168,76,.1); line-height: 1;
+}
+.bar-q p {
+  font-family: 'Cormorant Garamond', serif; font-size: 17px;
+  font-style: italic; font-weight: 300; color: rgba(255,255,255,.6);
+  line-height: 1.7; margin-bottom: 10px;
+}
+.bar-q cite { font-size: 8px; letter-spacing: .22em; color: var(--gold); text-transform: uppercase; }
+
+/* ══ GALLERY + LIGHTBOX ══ */
+.gal-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3px; margin-top: 40px; width: 100%;
+}
+.gi { position: relative; overflow: hidden; cursor: pointer; }
+.gi:nth-child(1) { grid-column: 1 / -1; height: 250px; }
+.gi:nth-child(n+2) { height: 180px; }
+.gi-fb { position: absolute; inset: 0; z-index: 0; }
+.gi img {
+  position: relative; z-index: 1;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform .7s var(--ease);
+  filter: brightness(.78) saturate(1.1);
+}
+.gi:hover img { transform: scale(1.05); filter: brightness(.9); }
+.gi-shade { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,0); transition: background .4s; }
+.gi:hover .gi-shade { background: rgba(0,0,0,.18); }
+.gi-lbl {
+  position: absolute; bottom: 10px; left: 12px; z-index: 3;
+  font-size: 8.5px; letter-spacing: .18em; color: rgba(255,255,255,.75);
+  text-transform: uppercase; opacity: 0; transform: translateY(5px);
+  transition: all .4s ease; font-weight: 300;
+  text-shadow: 0 1px 6px rgba(0,0,0,.9);
+}
+.gi:hover .gi-lbl { opacity: 1; transform: translateY(0); }
+.gi-zoom {
+  position: absolute; top: 10px; right: 10px; z-index: 3;
+  width: 26px; height: 26px; background: rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .3s;
+}
+.gi:hover .gi-zoom { opacity: 1; }
+.gi-zoom svg { width: 11px; stroke: #fff; fill: none; stroke-width: 2; }
+.gf1 { background: linear-gradient(145deg,#4A3020,#7A5030,#3A2010); }
+.gf2 { background: linear-gradient(145deg,#1A3020,#2A5035,#102010); }
+.gf3 { background: linear-gradient(145deg,#1A1A3A,#2A2A5A,#1A1030); }
+.gf4 { background: linear-gradient(145deg,#3A2010,#6A3A18,#2A1808); }
+.gf5 { background: linear-gradient(145deg,#2A1A10,#4A2A18,#3A1E0A); }
+.gf6 { background: linear-gradient(145deg,#101A2A,#182A4A,#101E38); }
+.gal-more {
+  grid-column: 1/-1;
+  background: rgba(201,168,76,.05); border: 1px solid rgba(201,168,76,.12); border-top: none;
+  padding: 14px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-size: 8.5px; letter-spacing: .2em; color: rgba(255,255,255,.36);
+  text-transform: uppercase; cursor: pointer; transition: background .3s, color .3s;
+}
+.gal-more:hover { background: rgba(201,168,76,.1); color: var(--gold); }
+
+/* LIGHTBOX */
+.lb {
+  position: fixed; inset: 0; z-index: 900;
+  background: rgba(0,0,0,.95);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+  padding: 16px;
+}
+.lb.open { opacity: 1; pointer-events: all; }
+.lb-wrap { position: relative; width: 100%; max-width: 100%; display: flex; align-items: center; justify-content: center; }
+.lb-wrap img {
+  max-width: 100%; max-height: 78vh;
+  object-fit: contain; display: block;
+  border: 1px solid rgba(201,168,76,.15);
+}
+.lb-close {
+  position: fixed; top: 16px; right: 16px; z-index: 10;
+  width: 40px; height: 40px; background: rgba(0,0,0,.7);
+  border: 1px solid rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .3s;
+}
+.lb-close:hover { background: rgba(201,168,76,.2); }
+.lb-close svg { width: 14px; stroke: #fff; fill: none; stroke-width: 2; }
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 36px; height: 36px; background: rgba(0,0,0,.6);
+  border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .3s; z-index: 5;
+}
+.lb-nav:hover { background: rgba(201,168,76,.2); }
+.lb-nav svg { width: 13px; stroke: #fff; fill: none; stroke-width: 2; }
+.lb-prev { left: 4px; }
+.lb-next { right: 4px; }
+.lb-info {
+  position: fixed; bottom: 20px; left: 0; right: 0;
+  text-align: center;
+}
+.lb-counter { font-size: 9px; letter-spacing: .2em; color: rgba(255,255,255,.3); display: block; }
+.lb-caption { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; color: rgba(255,255,255,.4); margin-top: 4px; display: block; }
+
+/* ══ POOL ══ */
+.pool-img {
+  height: 250px; width: 100%;
+  position: relative; overflow: hidden; margin-bottom: 28px;
+}
+.pool-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+  display: block;
+}
+.pool-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--ivory) 0%, transparent 55%);
+}
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.chip {
+  background: var(--wh); border: 1px solid var(--ivory2);
+  padding: 6px 12px; font-size: 8.5px; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--mid); font-weight: 500;
+  transition: all .3s; cursor: default;
+}
+.chip:hover { background: var(--gold); border-color: var(--gold); color: var(--dk); }
+
+/* ══ OFFERS ══ */
+.offer-list { display: flex; flex-direction: column; gap: 12px; margin-top: 40px; }
+.offer {
+  background: var(--wh); padding: 24px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .3s, box-shadow .3s;
+}
+.offer:hover { border-color: var(--gold); box-shadow: 0 16px 40px rgba(26,20,16,.09); }
+.offer-tag {
+  display: inline-block; padding: 4px 9px;
+  font-size: 7.5px; letter-spacing: .28em; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.offer-tag.a { background: var(--gold); color: var(--dk); }
+.offer-tag.b { background: var(--copper); color: #fff; }
+.offer-tag.c { background: var(--dk); color: var(--gold); }
+.offer-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--dk); margin-bottom: 7px; }
+.offer-desc { font-size: 11.5px; font-weight: 300; color: var(--mid); line-height: 1.82; margin-bottom: 14px; }
+.offer-sav { display: flex; align-items: center; gap: 12px; }
+.offer-pct { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--gold); line-height: 1; }
+.offer-det { font-size: 10.5px; font-weight: 300; color: var(--mid); line-height: 1.6; }
+
+/* ══ REVIEWS ══ */
+.reviews-hdr { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 38px; }
+.score-big { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--gold); line-height: 1; }
+.score-stars { display: flex; gap: 3px; justify-content: flex-end; margin-top: 3px; }
+.score-stars span { color: var(--gold); font-size: 10.5px; }
+.score-sub { font-size: 7.5px; letter-spacing: .18em; color: rgba(255,255,255,.25); text-transform: uppercase; margin-top: 3px; }
+.rv-list { display: flex; flex-direction: column; gap: 3px; }
+.rv {
+  background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.04);
+  padding: 22px; position: relative; overflow: hidden; transition: background .3s, border-color .3s;
+}
+.rv:hover { background: rgba(255,255,255,.04); border-color: rgba(201,168,76,.15); }
+.rv::before {
+  content: '\201C'; position: absolute; top: 12px; right: 14px;
+  font-family: 'Cormorant Garamond', serif; font-size: 52px;
+  color: rgba(201,168,76,.08); line-height: 1;
+}
+.rv-stars { display: flex; gap: 3px; margin-bottom: 10px; }
+.rv-stars span { color: var(--gold); font-size: 10px; }
+.rv-txt {
+  font-family: 'Cormorant Garamond', serif; font-size: 17px;
+  font-style: italic; font-weight: 300; color: rgba(255,255,255,.68);
+  line-height: 1.7; margin-bottom: 14px;
+}
+.rv-auth { display: flex; align-items: center; gap: 10px; }
+.rv-av {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--copper));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 12px; color: var(--dk); flex-shrink: 0;
+}
+.rv-nm { font-size: 9.5px; letter-spacing: .12em; color: rgba(255,255,255,.42); text-transform: uppercase; font-weight: 400; }
+.rv-og { font-size: 8.5px; color: rgba(255,255,255,.2); margin-top: 1px; }
+
+/* ══ EVENTS ══ */
+.ev-list { display: flex; flex-direction: column; gap: 14px; margin-top: 40px; }
+.ev {
+  border: 1px solid var(--ivory2); padding: 22px;
+  position: relative; overflow: hidden; transition: border-color .3s;
+}
+.ev:hover { border-color: var(--gold); }
+.ev::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--gold); transform: scaleY(0); transition: transform .4s;
+  transform-origin: bottom;
+}
+.ev:hover::before { transform: scaleY(1); transform-origin: top; }
+.ev-n { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--ivory2); line-height: 1; margin-bottom: 9px; }
+.ev-t { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--dk); margin-bottom: 6px; }
+.ev-d { font-size: 11.5px; font-weight: 300; color: var(--mid); line-height: 1.8; }
+.ev-specs { display: flex; gap: 14px; margin-top: 12px; flex-wrap: wrap; }
+.ev-spec { font-size: 8px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; font-weight: 500; }
+
+/* ══ SUSTAINABILITY ══ */
+.sus-g { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 40px; background: rgba(201,168,76,.07); }
+.sus-item { background: var(--dk3); padding: 22px 16px; }
+.sus-n { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: rgba(201,168,76,.22); line-height: 1; margin-bottom: 6px; }
+.sus-t { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #fff; margin-bottom: 4px; }
+.sus-b { font-size: 9.5px; font-weight: 300; color: rgba(255,255,255,.3); line-height: 1.65; }
+
+/* ══ FAQ ══ */
+.faq { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+.faq-item { background: var(--wh); border: 1px solid var(--ivory2); overflow: hidden; transition: border-color .3s; }
+.faq-item.open { border-color: rgba(201,168,76,.3); }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; cursor: pointer; gap: 12px; user-select: none; }
+.faq-q span { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; color: var(--dk); }
+.faq-ico { width: 22px; height: 22px; border: 1px solid rgba(201,168,76,.26); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .3s, background .3s; }
+.faq-item.open .faq-ico { transform: rotate(45deg); background: rgba(201,168,76,.08); }
+.faq-ico svg { width: 9px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s var(--ease); }
+.faq-item.open .faq-a { max-height: 180px; }
+.faq-a-in { padding: 0 18px 14px; font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.82; border-top: 1px solid var(--ivory2); }
+
+/* ══ NEWSLETTER ══ */
+.nl-sec { background: var(--dk2); padding: 56px var(--pad); text-align: center; border-top: 1px solid rgba(201,168,76,.09); width: 100%; }
+.nl-sec h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+.nl-sec h3 em { font-style: italic; color: var(--gold-l); }
+.nl-sec p { font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,.36); margin-bottom: 24px; line-height: 1.7; }
+.nl-form { display: flex; flex-direction: column; gap: 9px; }
+.nl-input {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(201,168,76,.13);
+  color: #fff; padding: 13px 16px; font-size: 13px;
+  font-family: 'Jost', sans-serif; outline: none;
+  -webkit-appearance: none; border-radius: 0;
+  transition: border-color .3s; width: 100%;
+}
+.nl-input:focus { border-color: var(--gold); }
+.nl-input::placeholder { color: rgba(255,255,255,.2); }
+.nl-sub {
+  padding: 14px; background: var(--gold); color: var(--dk);
+  border: none; font-size: 9.5px; letter-spacing: .22em; font-weight: 600;
+  text-transform: uppercase; font-family: 'Jost', sans-serif;
+  cursor: pointer; transition: background .3s; width: 100%;
+}
+.nl-sub:hover { background: var(--gold-l); }
+.nl-note { font-size: 8.5px; color: rgba(255,255,255,.16); margin-top: 7px; letter-spacing: .08em; }
+
+/* ══ LOCATION ══ */
+.loc-map {
+  margin: 40px calc(-1 * var(--pad)) 0;
+  height: 230px; width: calc(100% + var(--pad) * 2);
+  position: relative; overflow: hidden;
+  background: linear-gradient(145deg, var(--dk) 0%, #2C1A0E 50%, #1A1008 100%);
+}
+.loc-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(201,168,76,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,.06) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+.loc-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.loc-pin svg { width: 36px; }
+.loc-pin-lbl { background: var(--gold); color: var(--dk); padding: 4px 10px; font-size: 8px; letter-spacing: .22em; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
+.loc-items { margin-top: 36px; display: flex; flex-direction: column; gap: 14px; }
+.litem { display: flex; gap: 14px; align-items: flex-start; padding: 16px; background: var(--wh); border-left: 2px solid rgba(201,168,76,.28); }
+.litem-ico { width: 30px; height: 30px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.litem-ico svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.litem-t { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 400; color: var(--dk); margin-bottom: 3px; }
+.litem-b { font-size: 11px; font-weight: 300; color: var(--mid); line-height: 1.72; }
+
+/* ══ AWARDS ══ */
+.awards-sec { background: var(--dk4); padding: 44px var(--pad); text-align: center; border-top: 1px solid rgba(201,168,76,.07); }
+.awards-row { display: flex; justify-content: center; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+.award-item { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.award-icon { width: 40px; height: 40px; border: 1px solid rgba(201,168,76,.22); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.award-icon svg { width: 17px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.award-label { font-size: 8px; letter-spacing: .18em; color: rgba(255,255,255,.24); text-transform: uppercase; text-align: center; max-width: 76px; line-height: 1.5; }
+
+/* ══ CTA ══ */
+.cta-sec {
+  background: var(--dk5); padding: 80px var(--pad);
+  position: relative; overflow: hidden; text-align: center;
+}
+.cta-sec::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center 70%, rgba(201,168,76,.08) 0%, transparent 65%);
+}
+.cta-sec::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: .3;
+}
+.cta-orn {
+  font-family: 'Cormorant Garamond', serif; font-size: 72px;
+  font-weight: 300; color: rgba(201,168,76,.04); line-height: 1;
+  font-style: italic; margin-bottom: -14px;
+}
+.cta-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 40px; }
+.cs { background: rgba(201,168,76,.04); border-top: 1px solid rgba(201,168,76,.1); padding: 22px; display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
+.cs-item { display: flex; align-items: center; gap: 12px; }
+.cs-item svg { width: 13px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+.cs-item span { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.44); }
+
+/* ══ FOOTER ══ */
+footer { background: #050302; padding: 56px var(--pad) 40px; border-top: 1px solid rgba(201,168,76,.07); }
+.ft-top { padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.04); }
+.ft-brand { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #fff; letter-spacing: .12em; text-transform: uppercase; }
+.ft-brand-sub { font-size: 7.5px; letter-spacing: .36em; color: var(--gold); font-weight: 300; margin-top: 4px; text-transform: uppercase; }
+.ft-rule { width: 28px; height: 1px; background: var(--gold); margin: 22px 0; opacity: .5; }
+.ft-addr p { font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,.25); line-height: 2.2; }
+.ft-addr a { color: rgba(255,255,255,.25); text-decoration: none; transition: color .3s; }
+.ft-addr a:hover { color: var(--gold); }
+.ft-social { display: flex; gap: 9px; margin-top: 28px; }
+.ft-soc { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; transition: border-color .3s, background .3s; cursor: pointer; }
+.ft-soc:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.ft-soc svg { width: 13px; stroke: rgba(255,255,255,.28); fill: none; stroke-width: 1.5; transition: stroke .3s; }
+.ft-soc:hover svg { stroke: var(--gold); }
+.ft-nav-t { font-size: 7px; letter-spacing: .32em; color: rgba(255,255,255,.15); text-transform: uppercase; font-weight: 500; margin: 30px 0 12px; }
+.ft-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+.ft-links a { font-size: 10px; letter-spacing: .08em; color: rgba(255,255,255,.28); text-decoration: none; transition: color .3s; font-weight: 300; }
+.ft-links a:hover { color: var(--gold); }
+.ft-bottom { margin-top: 36px; display: flex; flex-direction: column; gap: 5px; }
+.ft-bottom p { font-size: 8px; color: rgba(255,255,255,.11); letter-spacing: .09em; line-height: 1.9; }
+
+/* ══ COOKIE BANNER ══ */
+.cookie {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 500;
+  background: rgba(22,16,10,.97); backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201,168,76,.16);
+  padding: 16px var(--pad);
+  transform: translateY(100%); transition: transform .5s var(--ease);
+  display: flex; flex-direction: column; gap: 12px; width: 100%;
+}
+.cookie.show { transform: translateY(0); }
+.cookie p { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.44); line-height: 1.7; }
+.cookie p a { color: var(--gold); text-decoration: none; }
+.cookie-btns { display: flex; gap: 8px; }
+.cookie-accept {
+  flex: 1; background: var(--gold); color: var(--dk);
+  border: none; padding: 11px; font-size: 9px; letter-spacing: .2em;
+  font-weight: 600; text-transform: uppercase; font-family: 'Jost', sans-serif;
+  cursor: pointer; transition: background .3s;
+}
+.cookie-accept:hover { background: var(--gold-l); }
+.cookie-decline {
+  flex: 1; background: transparent; color: rgba(255,255,255,.32);
+  border: 1px solid rgba(255,255,255,.1); padding: 11px; font-size: 9px;
+  letter-spacing: .2em; font-weight: 300; text-transform: uppercase;
+  font-family: 'Jost', sans-serif; cursor: pointer; transition: all .3s;
+}
+.cookie-decline:hover { border-color: rgba(255,255,255,.28); color: rgba(255,255,255,.55); }
+
+/* ══ FAB BUTTONS ══ */
+.btt {
+  position: fixed; bottom: 24px; right: var(--pad); z-index: 50;
+  width: 42px; height: 42px; background: var(--gold); border: none;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: all .4s ease; box-shadow: 0 6px 18px rgba(201,168,76,.28);
+}
+.btt.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.btt:hover { background: var(--gold-l); transform: translateY(-3px); }
+.btt svg { width: 13px; stroke: var(--dk); fill: none; stroke-width: 2.2; }
+.wa {
+  position: fixed; bottom: 76px; right: var(--pad); z-index: 50;
+  width: 42px; height: 42px; background: #25D366; border: none;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: all .4s ease .08s; box-shadow: 0 6px 18px rgba(37,211,102,.28);
+  text-decoration: none;
+}
+.wa.show { opacity: 1; transform: translateY(0); pointer-events: all; }
+.wa:hover { background: #20c55c; }
+.wa svg { width: 20px; fill: #fff; }
+
+/* ══ GOLD DIVIDER ══ */
+.gold-div { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: .2; }
+
+/* ══ SELECTION + SCROLLBAR ══ */
+::selection { background: rgba(201,168,76,.28); color: var(--dk); }
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ══ REDUCED MOTION ══ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ══ KEYFRAMES ══ */
+@keyframes hfu { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scrDrop { 0% { top: -100%; } 50% { top: 100%; } 100% { top: 100%; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes loaderPulse { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+@keyframes loaderSlide { from { left: -100%; } to { left: 0; } }
+
+/* ═══════════════════════════
+   FINAL POLISH — appended
+═══════════════════════════ */
+
+/* Safe area for notch devices */
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+.cookie {
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+nav {
+  padding-top: calc(18px + env(safe-area-inset-top));
+}
+
+/* Image shimmer while loading */
+img {
+  opacity: 0;
+  transition: opacity .55s ease;
+  background: linear-gradient(90deg, #1A1410 25%, #2C2318 50%, #1A1410 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+img.loaded { opacity: 1; animation: none; background: none; }
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Touch active states */
+.room:active .room-img img { transform: scale(.985); }
+.btn-g:active { transform: scale(.98); }
+.btn-o:active { transform: scale(.98); opacity: .85; }
+.gi:active img { transform: scale(.97); }
+.offer:active { transform: scale(.99); }
+
+/* Subtle gold pulse on hero badge */
+.hero-badge svg circle:last-child {
+  animation: goldPulse 3s ease-in-out infinite;
+}
+@keyframes goldPulse {
+  0%, 100% { opacity: .45; r: 4; }
+  50%       { opacity: .9;  r: 5; }
+}
+
+/* Elegant section transitions */
+.sec + .sec,
+.s-dk + .s-lt,
+.s-lt + .s-md,
+.s-md + .s-dkr,
+.s-dkr + .s-wh {
+  position: relative;
+}
+
+/* Room card image zoom on loaded */
+.room-img img.loaded { filter: brightness(.78) saturate(1.1); }
+.room:hover .room-img img.loaded { filter: brightness(.9) saturate(1.15); }
+
+/* Gallery image adjustments */
+.gi:nth-child(1) img { object-position: center 30%; }
+.gi:nth-child(2) img { object-position: center 40%; }
+.gi:nth-child(3) img { object-position: center 50%; }
+.gi:nth-child(4) img { object-position: center 35%; }
+.gi:nth-child(5) img { object-position: center 40%; }
+.gi:nth-child(6) img { object-position: center 35%; }
+
+/* About image — show full hotel with building visible */
+.about-img img { object-position: center 25%; }
+
+/* Restaurant image — focus on food/interior area */
+.rest-img img { object-position: center 55%; }
+
+/* Bar/Pool image — show pool deck */
+.bar-img img  { object-position: center 35%; }
+
+/* Hero image — center building perfectly */
+.hero-bg img  { object-position: center 30%; }
+
+/* Pool section image */
+.pool-img img { object-position: center 40%; }
+
+/* Better review card baseline */
+.rv-list .rv:last-child { border-bottom: 1px solid rgba(255,255,255,.04); }
+
+/* Smoother FAQ */
+.faq-a-in { padding-top: 10px; }
+
+/* Offer hover lift */
+.offer { transition: border-color .3s ease, box-shadow .3s ease, transform .25s ease; }
+.offer:hover { transform: translateY(-2px); }
+
+/* Stats row — ensure no overflow */
+.stats, .stats * { min-width: 0; }
+.stat-n { font-size: clamp(32px, 8vw, 44px); }
+
+/* Nav logo — prevent text overflow */
+.nav-logo-main { font-size: clamp(13px, 3.5vw, 17px); white-space: nowrap; }
+.nav-logo-sub   { font-size: clamp(7px, 2vw, 8.5px); white-space: nowrap; }
+
+/* Prevent eyebrow overflow */
+.ey span, .hero-eyebrow span { overflow: hidden; text-overflow: ellipsis; max-width: calc(100vw - 100px); }
+
+/* Marquee — hide overflow absolutely */
+.mqsec { overflow: hidden; width: 100%; max-width: 100%; }
+
+/* Rooms grid — full bleed */
+.rooms { margin-left: calc(-1 * var(--pad)); margin-right: calc(-1 * var(--pad)); gap: 2px; }
+.room-foot { padding: 11px 16px; }
+
+/* Gallery full bleed */
+.gal-grid { margin-left: calc(-1 * var(--pad)); margin-right: calc(-1 * var(--pad)); gap: 2px; }
+
+/* Booking form — date input colour fix on iOS */
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(.5) sepia(1) saturate(3) hue-rotate(8deg); opacity: .6; }
+
+/* Lightbox — full mobile coverage */
+.lb { padding: 0; }
+.lb-wrap { padding: 50px 8px; }
+.lb-wrap img { max-width: calc(100vw - 16px); }
+
+/* Footer social icons — tap target */
+.ft-soc { width: 40px; height: 40px; cursor: pointer; }
+
+/* WhatsApp float — raise above cookie */
+.wa { bottom: 90px; }
+
+/* Cookie — higher z so doesn't overlap WA */
+.cookie { z-index: 498; }
+
+/* Scroll to section offset for fixed nav */
+section[id], div[id] { scroll-margin-top: 60px; }
+
+/* Focus ring */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); }
+
+/* Print */
+@media print {
+  #loader, #prog, .btt, .wa, .cookie, .ham, .fsmenu,
+  .hero-scroll, .hero-badge, .bstrip { display: none !important; }
+  .hero { height: auto; min-height: 200px; page-break-after: always; }
+  body { color: #000; background: #fff; }
+  .h2, .h2w { color: #000 !important; }
+  a { color: #000; text-decoration: underline; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" style="position:fixed;inset:0;z-index:9999;background:var(--dk5);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s ease,visibility .6s ease">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#fff;letter-spacing:.2em;text-transform:uppercase;animation:loaderPulse 1.5s ease-in-out infinite">Hotel Inter</div>
+  <div style="font-size:8.5px;letter-spacing:.48em;color:var(--gold);text-transform:uppercase;font-weight:300">Chimoio · Moçambique</div>
+  <div style="width:110px;height:1px;background:rgba(255,255,255,.1);position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:loaderSlide 1.6s var(--ease) forwards"></div>
+  </div>
+</div>
+
+<div id="prog"></div>
+<button class="btt" id="btt" aria-label="Topo"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></button>
+<a class="wa" id="wa" href="https://wa.me/258251240200?text=Olá%2C%20gostaria%20de%20reservar%20no%20Hotel%20Inter%20Chimoio" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookie">
+  <p>Utilizamos cookies para melhorar a sua experiência. Ao continuar, aceita a nossa <a href="#">Política de Privacidade</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookieOk">Aceitar</button>
+    <button class="cookie-decline" id="cookieNo">Rejeitar</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">Hotel Inter</span>
+    <span class="nav-logo-sub">Chimoio · Moçambique</span>
+  </a>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- FULLSCREEN MENU -->
+<div class="fsmenu" id="fsmenu">
+  <div class="fsm-inner">
+    <a href="#sobre"       class="fsm-link"><span class="fsm-num">01</span>Sobre</a>
+    <a href="#quartos"     class="fsm-link"><span class="fsm-num">02</span>Quartos &amp; Suites</a>
+    <a href="#restaurante" class="fsm-link"><span class="fsm-num">03</span>Restaurante</a>
+    <a href="#bar"         class="fsm-link"><span class="fsm-num">04</span>Bar &amp; Piscina</a>
+    <a href="#galeria"     class="fsm-link"><span class="fsm-num">05</span>Galeria</a>
+    <a href="#eventos"     class="fsm-link"><span class="fsm-num">06</span>Eventos</a>
+    <a href="#reservar"    class="fsm-link"><span class="fsm-num">07</span>Reservar</a>
+  </div>
+  <div class="fsm-foot">
+    <div>
+      <p><a href="tel:+258251240200">+258 25 12 4200</a></p>
+      <p><a href="mailto:reservas@hotelinterchimoio.co.mz">reservas@hotelinterchimoio.co.mz</a></p>
+    </div>
+    <div class="fsm-badge">Inter</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=85&fit=crop"
+         alt="Hotel Inter Chimoio — Fachada"
+         onerror="this.style.display='none'">
+  </div>
+  <div class="hero-vignette"></div>
+  <div class="hero-badge">
+    <svg viewBox="0 0 100 100" fill="none">
+      <defs><path id="crc" d="M50,50 m-32,0 a32,32 0 1,1 64,0 a32,32 0 1,1 -64,0"/></defs>
+      <circle cx="50" cy="50" r="44" stroke="rgba(201,168,76,.2)" stroke-width="1"/>
+      <text font-family="Jost,sans-serif" font-size="8.5" fill="rgba(201,168,76,.5)" letter-spacing="3.5">
+        <textPath href="#crc">CHIMOIO · MOÇAMBIQUE · HOTEL INTER ·</textPath>
+      </text>
+      <circle cx="50" cy="50" r="4" fill="rgba(201,168,76,.45)"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>4 Estrelas · Av. 25 de Setembro</span>
+    </div>
+    <h1 class="hero-title">
+      Hotel<span class="l2">Inter</span><span class="l3">Chimoio</span>
+    </h1>
+    <p class="hero-desc">Sofisticação contemporânea no coração de Moçambique. A melhor experiência de hospitalidade da Beira Alta.</p>
+    <div class="hero-btns">
+      <a href="#reservar" class="btn-g">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Reservar Agora
+      </a>
+      <a href="#quartos" class="btn-o">Ver Quartos &amp; Preços</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scr-track"></div>
+    <span class="scr-label">Scroll</span>
+  </div>
+</section>
+
+<!-- BRAND STRIP -->
+<div class="bstrip">
+  <div class="bs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>4 Estrelas</div>
+  <div class="bsep"></div>
+  <div class="bs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>WiFi</div>
+  <div class="bsep"></div>
+  <div class="bs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>24h</div>
+  <div class="bsep"></div>
+  <div class="bs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>42 Quartos</div>
+</div>
+
+<!-- BOOKING -->
+<div class="bwrap" id="reservar">
+  <div class="bhdr open" id="bhdr">
+    <h3>Verificar Disponibilidade</h3>
+    <div class="bhdr-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+  </div>
+  <div class="bbody open" id="bbody">
+    <div class="binner">
+      <div class="f2">
+        <div class="fld"><label>Check-in</label><input type="date" id="ci"></div>
+        <div class="fld"><label>Check-out</label><input type="date" id="co"></div>
+      </div>
+      <div class="f2">
+        <div class="fld"><label>Hóspedes</label>
+          <select><option>1 Adulto</option><option selected>2 Adultos</option><option>2 + 1 Criança</option><option>2 + 2 Crianças</option></select>
+        </div>
+        <div class="fld"><label>Tipo</label>
+          <select><option>Qualquer</option><option>Standard</option><option>Junior Suite</option><option>VIP Suite</option></select>
+        </div>
+      </div>
+      <button class="btn-g" onclick="alert('Por favor ligue: +258 25 12 4200')">Verificar Disponibilidade</button>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec s-lt" id="sobre">
+  <div class="r"><div class="ey"><span>Sobre o Hotel</span></div>
+    <h2 class="h2">Uma presença<br><em>marcante</em> em<br>Chimoio</h2>
+    <div class="gbar"></div>
+    <p class="bt">Situado na Av. 25 de Setembro 18B, o Hotel Inter Chimoio é a referência de hospitalidade da Província de Manica. 42 quartos, Restaurante Vila Pery, bar, piscina rooftop e centro de negócios.</p>
+  </div>
+  <div class="about-img r d2">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=85&fit=crop"
+         alt="Restaurante Vila Pery — Hotel Inter Chimoio"
+         loading="lazy" onerror="this.style.display='none'">
+    <div class="about-img-shade"></div>
+    <div class="about-img-cap">Restaurante Vila Pery — sabores moçambicanos e internacionais</div>
+  </div>
+  <div class="stats r d3">
+    <div class="stat"><div class="stat-n">42</div><div class="stat-l">Quartos</div></div>
+    <div class="stat"><div class="stat-n">4<sup>★</sup></div><div class="stat-l">Estrelas</div></div>
+    <div class="stat"><div class="stat-n">10<sup>m</sup></div><div class="stat-l">Aeroporto</div></div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="sec s-dk" id="quartos" style="padding-bottom:0">
+  <div class="r"><div class="ey"><span>Acomodações</span></div>
+    <h2 class="h2 h2w">Quartos &amp;<br><em>Suites</em></h2>
+    <p class="bt btw">Três categorias para o viajante exigente — design contemporâneo, tecnologia de ponta e todas as comodidades de um hotel 4 estrelas.</p>
+  </div>
+  <div class="rooms">
+    <a class="room r d1" href="#reservar">
+      <div class="room-img">
+        <div class="room-fb" style="background:linear-gradient(145deg,#4A2E1A,#7A4A28,#3A2010)"></div>
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=85&fit=crop"
+             alt="Quarto Standard — Hotel Inter Chimoio" loading="lazy"
+             onerror="this.style.opacity='0'">
+        <div class="room-dots"></div><div class="room-shade"></div>
+        <div class="room-info">
+          <div><div class="room-badge">Standard</div><div class="room-nm">Quarto Standard</div>
+            <div class="room-feats"><span class="room-feat">Queen Bed</span><span class="room-feat">AC</span><span class="room-feat">TV Satélite</span><span class="room-feat">WiFi</span></div>
+          </div>
+          <div class="room-pr"><span class="room-pr-from">A partir de</span><div class="room-pr-val">5.500</div><span class="room-pr-cur">MZN / noite</span></div>
+        </div>
+      </div>
+      <div class="room-foot"><span>Ver detalhes &amp; reservar</span><span class="room-arrow">→</span></div>
+    </a>
+    <a class="room r d2" href="#reservar">
+      <div class="room-img">
+        <div class="room-fb" style="background:linear-gradient(145deg,#1A3020,#2A5035,#102010)"></div>
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=85&fit=crop"
+             alt="Junior Suite — Hotel Inter Chimoio" loading="lazy"
+             onerror="this.style.opacity='0'">
+        <div class="room-dots"></div><div class="room-shade"></div>
+        <div class="room-info">
+          <div><div class="room-badge">Junior Suite</div><div class="room-nm">Junior Suite</div>
+            <div class="room-feats"><span class="room-feat">Queen Bed</span><span class="room-feat">Canto Premium</span><span class="room-feat">Minibar</span></div>
+          </div>
+          <div class="room-pr"><span class="room-pr-from">A partir de</span><div class="room-pr-val">8.500</div><span class="room-pr-cur">MZN / noite</span></div>
+        </div>
+      </div>
+      <div class="room-foot"><span>Ver detalhes &amp; reservar</span><span class="room-arrow">→</span></div>
+    </a>
+    <a class="room r d3" href="#reservar">
+      <div class="room-img">
+        <div class="room-fb" style="background:linear-gradient(145deg,#3A2A10,#6A4A18,#2A1808)"></div>
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=85&fit=crop"
+             alt="VIP Suite — Hotel Inter Chimoio" loading="lazy"
+             onerror="this.style.opacity='0'">
+        <div class="room-dots"></div><div class="room-shade"></div>
+        <div class="room-info">
+          <div><div class="room-badge vip">VIP Suite</div><div class="room-nm">VIP Suite</div>
+            <div class="room-feats"><span class="room-feat">Queen Bed</span><span class="room-feat">Jacuzzi</span><span class="room-feat">Roupão</span></div>
+          </div>
+          <div class="room-pr"><span class="room-pr-from">A partir de</span><div class="room-pr-val">14.000</div><span class="room-pr-cur">MZN / noite</span></div>
+        </div>
+      </div>
+      <div class="room-foot"><span>Ver detalhes &amp; reservar</span><span class="room-arrow">→</span></div>
+    </a>
+  </div>
+  <div class="r d4" style="padding-top:48px">
+    <div class="ey"><span>Incluído em todos os quartos</span></div>
+    <div class="room-inc">
+      <div class="ri"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><circle cx="12" cy="20" r="1" fill="#C9A84C"/></svg><span class="ri-t">WiFi de alta velocidade gratuito</span><span class="ri-ck">✓</span></div>
+      <div class="ri"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span class="ri-t">TV ecrã plano com canais satélite</span><span class="ri-ck">✓</span></div>
+      <div class="ri"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg><span class="ri-t">Café e chá de cortesia</span><span class="ri-ck">✓</span></div>
+      <div class="ri"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="ri-t">Cofre electrónico no quarto</span><span class="ri-ck">✓</span></div>
+      <div class="ri"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span class="ri-t">Estacionamento privativo gratuito</span><span class="ri-ck">✓</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="sec s-lt">
+  <div class="r"><div class="ey"><span>Instalações</span></div>
+    <h2 class="h2">Tudo que<br><em>precisa</em></h2>
+  </div>
+  <div class="amen-g r d2">
+    <div class="amen"><div class="amen-ico"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></div><div class="amen-t">WiFi Premium</div><div class="amen-b">Fibra em todo o hotel, gratuito</div></div>
+    <div class="amen"><div class="amen-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="amen-t">Receção 24h</div><div class="amen-b">Equipa sempre disponível</div></div>
+    <div class="amen"><div class="amen-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg></div><div class="amen-t">Transfer Aeroporto</div><div class="amen-b">Shuttle gratuito 11km · 10 min</div></div>
+    <div class="amen"><div class="amen-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="amen-t">Segurança 24h</div><div class="amen-b">CCTV e vigilância permanente</div></div>
+    <div class="amen"><div class="amen-ico"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div class="amen-t">Centro de Negócios</div><div class="amen-b">Impressão e salas reunião</div></div>
+    <div class="amen"><div class="amen-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="amen-t">Câmbio de Divisas</div><div class="amen-b">Serviço disponível no lobby</div></div>
+    <div class="amen wide"><div class="amen-ico"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="amen-t">Buffet de Pequeno-almoço</div><div class="amen-b">Diário com produtos frescos locais, frutas tropicais e especialidades moçambicanas. Incluído em pacotes selecionados.</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqsec">
+  <div class="mqt">
+    <div class="mqi"><div class="mq-dot"></div>Hospitalidade de Excelência</div>
+    <div class="mqi"><div class="mq-dot"></div>Restaurante Vila Pery</div>
+    <div class="mqi"><div class="mq-dot"></div>Piscina Rooftop</div>
+    <div class="mqi"><div class="mq-dot"></div>Bar &amp; Cocktails</div>
+    <div class="mqi"><div class="mq-dot"></div>Eventos &amp; Conferências</div>
+    <div class="mqi"><div class="mq-dot"></div>Chimoio · Moçambique</div>
+    <div class="mqi"><div class="mq-dot"></div>Hospitalidade de Excelência</div>
+    <div class="mqi"><div class="mq-dot"></div>Restaurante Vila Pery</div>
+    <div class="mqi"><div class="mq-dot"></div>Piscina Rooftop</div>
+    <div class="mqi"><div class="mq-dot"></div>Bar &amp; Cocktails</div>
+    <div class="mqi"><div class="mq-dot"></div>Eventos &amp; Conferências</div>
+    <div class="mqi"><div class="mq-dot"></div>Chimoio · Moçambique</div>
+  </div>
+</div>
+
+<!-- RESTAURANT -->
+<section class="sec s-md" id="restaurante" style="padding-top:64px">
+  <div class="r"><div class="ey"><span>Gastronomia</span></div>
+    <h2 class="h2 h2w">Restaurante<br><em>Vila Pery</em></h2>
+    <p class="bt btw">Menu à la carte com culinária moçambicana e internacional, com o toque africano da madeira. Qualidade, bom gosto e conforto num ambiente sofisticado.</p>
+  </div>
+  <div class="rest-img r d2">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=85&fit=crop"
+         alt="Restaurante Vila Pery" loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="rest-overlay"></div>
+    <div class="rest-cap"><h3>Vila Pery<br>Restaurant</h3><p>Menu à la carte · Aberto diariamente</p></div>
+  </div>
+  <div class="hours r d3">
+    <div class="hour"><div class="hour-l">Pequeno-almoço</div><div class="hour-t">06:30 – 10:00</div></div>
+    <div class="hour"><div class="hour-l">Almoço</div><div class="hour-t">12:00 – 14:30</div></div>
+    <div class="hour"><div class="hour-l">Jantar</div><div class="hour-t">19:00 – 22:30</div></div>
+    <div class="hour"><div class="hour-l">Room Service</div><div class="hour-t">Horário restaurante</div></div>
+  </div>
+  <div class="r d4" style="margin-top:28px">
+    <div class="ey" style="margin-bottom:14px"><span>Destaques do Menu</span></div>
+    <div class="menu-list">
+      <div class="mr"><div><div class="mr-n">Camarão Grelhado à Piri-piri</div><div class="mr-d">Camarão gigante · molho artesanal · mandioca</div></div><div class="mr-p">1.850</div></div>
+      <div class="mr"><div><div class="mr-n">Matapa Tradicional</div><div class="mr-d">Mandioca · amendoim · côco · camarão seco</div></div><div class="mr-p">1.100</div></div>
+      <div class="mr"><div><div class="mr-n">Frango à Zambeziana</div><div class="mr-d">Grelhado · molho de côco e alho · arroz</div></div><div class="mr-p">1.350</div></div>
+      <div class="mr"><div><div class="mr-n">Lagosta Grelhada</div><div class="mr-d">Lagosta fresca · manteiga de ervas · basmati</div></div><div class="mr-p">3.200</div></div>
+      <div class="mr"><div><div class="mr-n">Carne Grelhada</div><div class="mr-d">Seleção premium · guarnição · molho da casa</div></div><div class="mr-p">1.600</div></div>
+    </div>
+    <p style="font-size:8.5px;color:rgba(255,255,255,.18);margin-top:10px;letter-spacing:.1em">Preços em MZN · IVA incluído</p>
+  </div>
+</section>
+
+<!-- BAR & POOL -->
+<section class="sec s-dkr" id="bar" style="padding-top:0;padding-left:0;padding-right:0">
+  <div class="bar-img r">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85&fit=crop"
+         alt="Bar e Piscina Rooftop — Hotel Inter Chimoio" loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="bar-overlay"></div>
+  </div>
+  <div style="padding:44px 20px 72px">
+    <div class="r"><div class="ey"><span>Bar &amp; Piscina</span></div>
+      <h2 class="h2 h2w">Bar Vila Pery<br>&amp; <em>Rooftop Pool</em></h2>
+      <p class="bt btw">Bar acolhedor e íntimo para conversas privadas. A piscina no terraço oferece vista fantástica sobre Chimoio a 700m de altitude.</p>
+    </div>
+    <div class="bar-feats r d2">
+      <div class="bf"><div class="bf-ico"><svg viewBox="0 0 24 24"><path d="M8 3l4 8 5-5 1 9H6l1-9 5 5z" stroke-linejoin="round"/></svg></div><div><div class="bf-t">Selecção de Vinhos</div><div class="bf-b">Nacionais e importados seleccionados</div></div></div>
+      <div class="bf"><div class="bf-ico"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 0 1 0 8h-1M2 8h15v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div><div><div class="bf-t">Cocktails Artesanais</div><div class="bf-b">Gin, whisky e cocktails tropicais</div></div></div>
+      <div class="bf"><div class="bf-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h3M20 12h3M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div><div><div class="bf-t">Piscina Rooftop</div><div class="bf-b">Vista panorâmica sobre a cidade</div></div></div>
+      <div class="bf"><div class="bf-ico"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg></div><div><div class="bf-t">Café &amp; Snacks</div><div class="bf-b">Do nascer ao pôr do sol</div></div></div>
+    </div>
+    <div class="bar-q r d3">
+      <p>"The bar is cosy, comfortable and intimate — perfect for private discussions or larger gatherings over coffee or cocktails."</p>
+      <cite>Hotel Inter Chimoio · Vila Pery Bar</cite>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec s-dk" id="galeria" style="padding-bottom:0">
+  <div class="r"><div class="ey"><span>Galeria</span></div>
+    <h2 class="h2 h2w">O hotel em<br><em>imagens</em></h2>
+  </div>
+  <div class="gal-grid r d1">
+    <div class="gi" data-src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=85&fit=crop" data-cap="Exterior do Hotel">
+      <div class="gi-fb gf1"></div>
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&fit=crop" alt="Exterior" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="gi-shade"></div><div class="gi-lbl">Exterior do Hotel</div>
+      <div class="gi-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    </div>
+    <div class="gi" data-src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85&fit=crop" data-cap="Piscina Rooftop">
+      <div class="gi-fb gf2"></div>
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80&fit=crop" alt="Piscina" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="gi-shade"></div><div class="gi-lbl">Piscina Rooftop</div>
+      <div class="gi-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    </div>
+    <div class="gi" data-src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=85&fit=crop" data-cap="Restaurante Vila Pery">
+      <div class="gi-fb gf3"></div>
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&fit=crop" alt="Restaurante" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="gi-shade"></div><div class="gi-lbl">Restaurante Vila Pery</div>
+      <div class="gi-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    </div>
+    <div class="gi" data-src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=85&fit=crop" data-cap="Quarto Standard">
+      <div class="gi-fb gf4"></div>
+      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&fit=crop" alt="Quarto Standard" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="gi-shade"></div><div class="gi-lbl">Quarto Standard</div>
+      <div class="gi-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    </div>
+    <div class="gi" data-src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=1200&q=85&fit=crop" data-cap="Junior Suite">
+      <div class="gi-fb gf5"></div>
+      <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80&fit=crop" alt="Junior Suite" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="gi-shade"></div><div class="gi-lbl">Junior Suite</div>
+      <div class="gi-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    </div>
+    <div class="gi" data-src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=85&fit=crop" data-cap="VIP Suite">
+      <div class="gi-fb gf6"></div>
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80&fit=crop" alt="VIP Suite" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="gi-shade"></div><div class="gi-lbl">VIP Suite</div>
+      <div class="gi-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+    </div>
+    <div class="gal-more" id="galMore">Ver todas as fotografias →</div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <div class="lb-wrap">
+    <button class="lb-close" id="lbClose"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="lb-nav lb-prev" id="lbPrev"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" id="lbNext"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+  </div>
+  <div class="lb-info">
+    <span class="lb-counter" id="lbCtr"></span>
+    <span class="lb-caption" id="lbCap"></span>
+  </div>
+</div>
+
+<!-- POOL -->
+<section class="sec s-lt">
+  <div class="r"><div class="ey"><span>Lazer</span></div>
+    <h2 class="h2">Piscina com<br><em>vista panorâmica</em></h2>
+    <p class="bt">No terraço do hotel, a piscina exterior oferece vista fantástica sobre Chimoio a 700m de altitude.</p>
+  </div>
+  <div class="pool-img r d2">
+    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85&fit=crop"
+         alt="Piscina Rooftop — Hotel Inter Chimoio" loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="pool-overlay"></div>
+  </div>
+  <div class="chips r d3">
+    <div class="chip">Aberta Diariamente</div>
+    <div class="chip">Exclusiva Hóspedes</div>
+    <div class="chip">Vista Panorâmica</div>
+    <div class="chip">700m Altitude</div>
+    <div class="chip">Bar Rooftop</div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="sec s-iv2">
+  <div class="r"><div class="ey"><span>Promoções</span></div>
+    <h2 class="h2">Ofertas<br><em>exclusivas</em></h2>
+  </div>
+  <div class="offer-list">
+    <div class="offer r d1"><div class="offer-tag a">Mais Popular</div><div class="offer-title">Estadia &amp; Pequeno-almoço</div><div class="offer-desc">Quarto Superior com buffet para dois, WiFi e estacionamento gratuitos. Reserve com 7+ dias de antecedência.</div><div class="offer-sav"><div class="offer-pct">15%</div><div class="offer-det">Reserva antecipada<br>7+ dias</div></div></div>
+    <div class="offer r d2"><div class="offer-tag b">Flash</div><div class="offer-title">Escapadinha Romântica</div><div class="offer-desc">2 noites na VIP Suite, jantar para dois, decoração especial e late check-out às 14h00.</div><div class="offer-sav"><div class="offer-pct">20%</div><div class="offer-det">VIP Suite<br>2 noites</div></div></div>
+    <div class="offer r d3"><div class="offer-tag c">Corporativo</div><div class="offer-title">Pacote Executivo</div><div class="offer-desc">Quarto Deluxe com centro de negócios, sala reunião (4h) e transfer aeroporto incluído.</div><div class="offer-sav"><div class="offer-pct">10%</div><div class="offer-det">Estadias<br>3+ noites</div></div></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec s-dkr">
+  <div class="reviews-hdr r">
+    <div><div class="ey"><span>Avaliações</span></div>
+      <h2 class="h2 h2w" style="margin-bottom:0">O que dizem<br>os <em>hóspedes</em></h2>
+    </div>
+    <div class="r d2" style="text-align:right">
+      <div class="score-big">4.5</div>
+      <div class="score-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="score-sub">TripAdvisor</div>
+    </div>
+  </div>
+  <div class="rv-list">
+    <div class="rv r d1"><div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="rv-txt">"Excellent choice for business or leisure travelers. Nice clean hotel with good service and food. Highly recommend."</p><div class="rv-auth"><div class="rv-av">TJ</div><div><div class="rv-nm">TravelerJ</div><div class="rv-og">TripAdvisor · Verified</div></div></div></div>
+    <div class="rv r d2"><div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="rv-txt">"Spacious room with air conditioner. Very nice hotel, staff very helpful and friendly throughout my stay."</p><div class="rv-auth"><div class="rv-av">MK</div><div><div class="rv-nm">M. Kruger</div><div class="rv-og">TripAdvisor · Johannesburg</div></div></div></div>
+    <div class="rv r d3"><div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><p class="rv-txt">"Wi-Fi steady and strong. Rooftop pool is a great feature. Front desk very nice. Everything was top-notch."</p><div class="rv-auth"><div class="rv-av">AP</div><div><div class="rv-nm">Alex P.</div><div class="rv-og">TripAdvisor · Verified</div></div></div></div>
+    <div class="rv r d4"><div class="rv-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span></div><p class="rv-txt">"Good hotel for its location. Air-con, fridge, TV and hot water all working. Clean room, everything functioned well."</p><div class="rv-auth"><div class="rv-av">SL</div><div><div class="rv-nm">Served Our Purpose</div><div class="rv-og">TripAdvisor · Business</div></div></div></div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="sec s-wh" id="eventos">
+  <div class="r"><div class="ey"><span>Eventos &amp; Conferências</span></div>
+    <h2 class="h2">Espaços para<br><em>momentos</em><br>memoráveis</h2>
+    <p class="bt">Salas versáteis para corporativos, seminários e celebrações. Capacidade até 100 convidados.</p>
+  </div>
+  <div class="ev-list">
+    <div class="ev r d1"><div class="ev-n">01</div><div class="ev-t">Sala de Conferências</div><div class="ev-d">Sala sem pilares para grandes reuniões, seminários e product launches.</div><div class="ev-specs"><span class="ev-spec">Até 100 pax</span><span class="ev-spec">Projeção HD</span><span class="ev-spec">AC</span></div></div>
+    <div class="ev r d2"><div class="ev-n">02</div><div class="ev-t">3 Salas de Reunião</div><div class="ev-d">Para workshops, negociações e formações de grupos reduzidos.</div><div class="ev-specs"><span class="ev-spec">Até 30 pax</span><span class="ev-spec">Catering</span><span class="ev-spec">WiFi</span></div></div>
+    <div class="ev r d3"><div class="ev-n">03</div><div class="ev-t">Banquetes &amp; Celebrações</div><div class="ev-d">Casamentos, galas e celebrações com serviço completo e decoração personalizada.</div><div class="ev-specs"><span class="ev-spec">Serviço Completo</span><span class="ev-spec">Decoração</span></div></div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="sec s-dk">
+  <div class="r"><div class="ey"><span>Sustentabilidade</span></div>
+    <h2 class="h2 h2w">Compromisso<br>com o <em>ambiente</em></h2>
+  </div>
+  <div class="sus-g r d2">
+    <div class="sus-item"><div class="sus-n">01</div><div class="sus-t">Iluminação Sensorial</div><div class="sus-b">Sensores de movimento nas áreas comuns</div></div>
+    <div class="sus-item"><div class="sus-n">02</div><div class="sus-t">Keycard Energy</div><div class="sus-b">Sistema desliga ao sair do quarto</div></div>
+    <div class="sus-item"><div class="sus-n">03</div><div class="sus-t">Produtos Locais</div><div class="sus-b">Fornecedores da Província de Manica</div></div>
+    <div class="sus-item"><div class="sus-n">04</div><div class="sus-t">Gestão Resíduos</div><div class="sus-b">Separação e reciclagem integrada</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec s-lt">
+  <div class="r"><div class="ey"><span>FAQ</span></div>
+    <h2 class="h2">Perguntas<br><em>frequentes</em></h2>
+  </div>
+  <div class="faq r d2">
+    <div class="faq-item open"><div class="faq-q"><span>Horários de check-in e check-out?</span><div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Check-in a partir das 14h00, check-out até às 12h00. Early check-in e late check-out sujeitos a disponibilidade.</div></div></div>
+    <div class="faq-item"><div class="faq-q"><span>O hotel tem transfer do aeroporto?</span><div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Sim, shuttle gratuito para todos os hóspedes. O Aeroporto de Chimoio fica a 11km (10 minutos). Informe o hotel da hora de chegada.</div></div></div>
+    <div class="faq-item"><div class="faq-q"><span>O estacionamento é gratuito?</span><div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Sim, parque privado e gratuito com vigilância permanente para todos os hóspedes.</div></div></div>
+    <div class="faq-item"><div class="faq-q"><span>O pequeno-almoço está incluído?</span><div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Incluído em pacotes selecionados. Para tarifas só de alojamento pode ser adicionado. Buffet das 06h30 às 10h00.</div></div></div>
+    <div class="faq-item"><div class="faq-q"><span>O hotel é adequado para crianças?</span><div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-in">Sim. Crianças são bem-vindas. Camas extra disponíveis mediante pedido e disponibilidade.</div></div></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl-sec r">
+  <div class="ey ey-c" style="justify-content:center;margin-bottom:12px"><span>Newsletter</span></div>
+  <h3>Receba as melhores<br><em>ofertas exclusivas</em></h3>
+  <p>Seja o primeiro a saber sobre promoções e novidades do Hotel Inter Chimoio.</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="O seu e-mail">
+    <button class="nl-sub" onclick="alert('Obrigado! Será contactado em breve.')">Subscrever</button>
+  </div>
+  <p class="nl-note">Sem spam. Pode cancelar a qualquer momento.</p>
+</div>
+
+<!-- LOCATION -->
+<section class="sec s-lt" id="localizacao">
+  <div class="r"><div class="ey"><span>Localização</span></div>
+    <h2 class="h2">Av. 25 de Setembro,<br><em>Chimoio</em></h2>
+    <p class="bt">A 10 minutos do aeroporto, 450m do centro, junto a bancos e principais empresas da Província de Manica.</p>
+  </div>
+  <div class="loc-map r d2">
+    <div class="loc-grid"></div>
+    <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 400 230" fill="none">
+      <line x1="0" y1="115" x2="400" y2="115" stroke="rgba(201,168,76,.2)" stroke-width="8"/>
+      <line x1="200" y1="0" x2="200" y2="230" stroke="rgba(201,168,76,.18)" stroke-width="5"/>
+      <line x1="0" y1="57" x2="400" y2="57" stroke="rgba(201,168,76,.05)" stroke-width="2.5"/>
+      <line x1="0" y1="173" x2="400" y2="173" stroke="rgba(201,168,76,.05)" stroke-width="2.5"/>
+      <line x1="100" y1="0" x2="100" y2="230" stroke="rgba(201,168,76,.05)" stroke-width="2.5"/>
+      <line x1="300" y1="0" x2="300" y2="230" stroke="rgba(201,168,76,.05)" stroke-width="2.5"/>
+      <text x="8" y="110" font-family="Jost,sans-serif" font-size="6.5" fill="rgba(201,168,76,.26)">Av. 25 de Setembro</text>
+      <text x="208" y="36" font-family="Jost,sans-serif" font-size="6" fill="rgba(201,168,76,.22)">Av. E. Mondlane</text>
+    </svg>
+    <div class="loc-pin">
+      <svg viewBox="0 0 40 50" fill="none"><path d="M20 2C12.3 2 6 8.3 6 16c0 11 14 32 14 32s14-21 14-32C34 8.3 27.7 2 20 2z" fill="#C9A84C"/><circle cx="20" cy="16" r="6" fill="#1A1410"/></svg>
+      <div class="loc-pin-lbl">Hotel Inter · 18B</div>
+    </div>
+  </div>
+  <div class="loc-items r d3">
+    <div class="litem"><div class="litem-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="litem-t">Endereço</div><div class="litem-b">Av. 25 de Setembro, 18B, Chimoio 0603<br>Província de Manica, Moçambique</div></div></div>
+    <div class="litem"><div class="litem-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.36 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="litem-t">Telefone</div><div class="litem-b"><a href="tel:+258251240200" style="color:var(--mid);text-decoration:none">+258 25 12 4200</a></div></div></div>
+    <div class="litem"><div class="litem-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="litem-t">Email</div><div class="litem-b"><a href="mailto:reservas@hotelinterchimoio.co.mz" style="color:var(--mid);text-decoration:none">reservas@hotelinterchimoio.co.mz</a></div></div></div>
+    <div class="litem"><div class="litem-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><div class="litem-t">Distâncias</div><div class="litem-b">✈ Aeroporto: 11km (shuttle gratuito)<br>🏙 Centro: 450m · Bancos: 2 min a pé</div></div></div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<div class="gold-div"></div>
+<div class="awards-sec r">
+  <div class="ey ey-c" style="justify-content:center;margin-bottom:4px"><span>Reconhecimentos</span></div>
+  <div class="awards-row">
+    <div class="award-item"><div class="award-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg></div><div class="award-label">TripAdvisor Travellers' Choice</div></div>
+    <div class="award-item"><div class="award-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div class="award-label">Melhor Hotel Chimoio</div></div>
+    <div class="award-item"><div class="award-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="award-label">Hóspedes Preferem 4.5★</div></div>
+  </div>
+</div>
+<div class="gold-div"></div>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-orn r">Inter</div>
+  <div class="r d1">
+    <div class="ey ey-c"><span>Reserve Já</span></div>
+    <h2 class="h2 h2w" style="text-align:center;margin-top:14px">Planeie a sua<br><em>estadia perfeita</em></h2>
+    <p class="bt btw" style="text-align:center;margin:14px auto 0">Reserve diretamente e garanta as melhores tarifas, sem comissões.</p>
+  </div>
+  <div class="cta-btns r d2">
+    <a href="tel:+258251240200" class="btn-g">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.36 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      +258 25 12 4200
+    </a>
+    <a href="https://wa.me/258251240200?text=Olá%2C%20quero%20reservar" target="_blank" class="btn-o">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,.5)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="mailto:reservas@hotelinterchimoio.co.mz" class="btn-o">Enviar Email</a>
+  </div>
+  <div class="cs r d3">
+    <div class="cs-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Av. 25 de Setembro 18B · Chimoio 0603 · Moçambique</span></div>
+    <div class="cs-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg><span>+258 25 12 4200</span></div>
+    <div class="cs-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>reservas@hotelinterchimoio.co.mz</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">Hotel Inter Chimoio</div>
+    <div class="ft-brand-sub">4 Estrelas · Sofisticação · Conforto · Hospitalidade</div>
+    <div class="ft-rule"></div>
+    <div class="ft-addr">
+      <p>Av. 25 de Setembro, 18B · Chimoio 0603</p>
+      <p>Província de Manica · Moçambique</p>
+      <p><a href="tel:+258251240200">+258 25 12 4200</a></p>
+      <p><a href="mailto:reservas@hotelinterchimoio.co.mz">reservas@hotelinterchimoio.co.mz</a></p>
+    </div>
+    <div class="ft-social">
+      <div class="ft-soc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+      <div class="ft-soc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </div>
+    <div class="ft-nav-t">Navegação</div>
+    <div class="ft-links">
+      <a href="#sobre">Sobre Nós</a><a href="#quartos">Quartos</a>
+      <a href="#restaurante">Restaurante</a><a href="#bar">Bar</a>
+      <a href="#galeria">Galeria</a><a href="#eventos">Eventos</a>
+      <a href="#localizacao">Localização</a><a href="#reservar">Reservar</a>
+      <a href="#">Privacidade</a><a href="#">Termos</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2026 Hotel Inter Chimoio · Todos os direitos reservados</p>
+    <p>Av. 25 de Setembro 18B · Chimoio · Moçambique</p>
+  </div>
+</footer>
+
+<script>
+/* ── LOADER ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const l = document.getElementById('loader');
+    l.style.opacity = '0'; l.style.visibility = 'hidden';
+    setTimeout(() => l.remove(), 700);
+  }, 1500);
+});
+
+/* ── PROGRESS ── */
+window.addEventListener('scroll', () => {
+  const p = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('prog').style.width = p + '%';
+}, { passive: true });
+
+/* ── NAV + FABs ── */
+const nav = document.getElementById('nav');
+const btt = document.getElementById('btt');
+const wa  = document.getElementById('wa');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+  const show = window.scrollY > 400;
+  btt.classList.toggle('show', show);
+  wa.classList.toggle('show', show);
+}, { passive: true });
+
+/* ── MENU ── */
+const ham = document.getElementById('ham');
+const fsm = document.getElementById('fsmenu');
+ham.addEventListener('click', () => {
+  const o = fsm.classList.toggle('open');
+  ham.classList.toggle('open', o);
+  document.body.style.overflow = o ? 'hidden' : '';
+});
+fsm.querySelectorAll('.fsm-link').forEach(a => a.addEventListener('click', () => {
+  fsm.classList.remove('open'); ham.classList.remove('open'); document.body.style.overflow = '';
+}));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { fsm.classList.remove('open'); ham.classList.remove('open'); document.body.style.overflow = ''; }
+});
+
+/* ── BOOKING ── */
+const bhdr = document.getElementById('bhdr');
+const bbody = document.getElementById('bbody');
+bhdr.addEventListener('click', () => { bhdr.classList.toggle('open'); bbody.classList.toggle('open'); });
+const fmt = d => d.toISOString().split('T')[0];
+const d1 = new Date(); d1.setDate(d1.getDate() + 1);
+const d2 = new Date(); d2.setDate(d2.getDate() + 3);
+document.getElementById('ci').value = fmt(d1);
+document.getElementById('co').value = fmt(d2);
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 56, behavior: 'smooth' });
+  });
+});
+
+/* ── REVEAL ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+/* ── BTT ── */
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ── FAQ ── */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ── COOKIE ── */
+(function() {
+  if (localStorage.getItem('hic-ok')) return;
+  setTimeout(() => document.getElementById('cookie').classList.add('show'), 2000);
+  document.getElementById('cookieOk').addEventListener('click', () => {
+    localStorage.setItem('hic-ok', '1');
+    document.getElementById('cookie').classList.remove('show');
+  });
+  document.getElementById('cookieNo').addEventListener('click', () => {
+    document.getElementById('cookie').classList.remove('show');
+  });
+})();
+
+/* ── LIGHTBOX ── */
+const imgs = [];
+document.querySelectorAll('.gi[data-src]').forEach((gi, i) => {
+  imgs.push({ src: gi.dataset.src, cap: gi.dataset.cap || '' });
+  gi.addEventListener('click', () => openLb(i));
+});
+let lbIdx = 0;
+const lb = document.getElementById('lb');
+const lbImg = document.getElementById('lbImg');
+const lbCtr = document.getElementById('lbCtr');
+const lbCap = document.getElementById('lbCap');
+
+function openLb(i) {
+  lbIdx = i;
+  lbImg.src = imgs[i].src;
+  lbCtr.textContent = (i + 1) + ' / ' + imgs.length;
+  lbCap.textContent = imgs[i].cap;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('lbClose').addEventListener('click', closeLb);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); openLb((lbIdx - 1 + imgs.length) % imgs.length); });
+document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); openLb((lbIdx + 1) % imgs.length); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft')  openLb((lbIdx - 1 + imgs.length) % imgs.length);
+  if (e.key === 'ArrowRight') openLb((lbIdx + 1) % imgs.length);
+});
+let tx = 0;
+lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 45) dx < 0 ? openLb((lbIdx+1)%imgs.length) : openLb((lbIdx-1+imgs.length)%imgs.length);
+}, { passive: true });
+document.getElementById('galMore').addEventListener('click', () => openLb(0));
+</script>
+
+<script>
+/* ── FINAL POLISH SCRIPTS ── */
+
+/* Image load fade-in */
+document.querySelectorAll('img').forEach(img => {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add('loaded');
+  } else {
+    img.addEventListener('load', function() { this.classList.add('loaded'); });
+    img.addEventListener('error', function() {
+      this.classList.add('loaded'); // remove shimmer even on error
+    });
+  }
+});
+
+/* Ripple on primary buttons */
+document.querySelectorAll('.btn-g').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const r = document.createElement('span');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    r.style.cssText = `
+      position:absolute;border-radius:50%;
+      width:${size}px;height:${size}px;
+      left:${e.clientX - rect.left - size/2}px;
+      top:${e.clientY - rect.top - size/2}px;
+      background:rgba(255,255,255,.25);
+      transform:scale(0);
+      animation:ripple .6s linear;
+      pointer-events:none;
+    `;
+    this.style.overflow = 'hidden';
+    this.style.position = 'relative';
+    this.appendChild(r);
+    setTimeout(() => r.remove(), 700);
+  });
+});
+
+/* Ripple keyframe injection */
+if (!document.getElementById('ripple-style')) {
+  const s = document.createElement('style');
+  s.id = 'ripple-style';
+  s.textContent = '@keyframes ripple { to { transform:scale(4); opacity:0; } }';
+  document.head.appendChild(s);
+}
+
+/* Parallax hero image on scroll (subtle) */
+const heroBgImg = document.querySelector('.hero-bg img');
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!heroBgImg || !ticking) {
+    requestAnimationFrame(() => {
+      if (heroBgImg && window.scrollY < window.innerHeight) {
+        heroBgImg.style.transform = `scale(1.01) translateY(${window.scrollY * 0.18}px)`;
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+/* Number counter animation for stats */
+const countEls = document.querySelectorAll('.stat-n');
+const countIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const text = el.textContent.trim();
+    const sup = el.querySelector('sup');
+    const suffix = sup ? sup.outerHTML : '';
+    const num = parseInt(text.replace(/\D/g, ''));
+    if (isNaN(num) || num < 2) return;
+    let start = 0;
+    const dur = 1200;
+    const t0 = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.innerHTML = Math.floor(eased * num) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+      else el.innerHTML = num + suffix;
+    };
+    requestAnimationFrame(tick);
+    countIO.unobserve(el);
+  });
+}, { threshold: 0.6 });
+countEls.forEach(el => countIO.observe(el));
+
+/* Offer cards — stagger reveal */
+document.querySelectorAll('.offer').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.08) + 's';
+});
+
+/* Touch haptic-like feedback */
+document.querySelectorAll('.room, .gi, .faq-q, .bf').forEach(el => {
+  el.addEventListener('touchstart', () => {}, { passive: true });
+});
+
+/* Active nav link highlight via IntersectionObserver */
+const sections = document.querySelectorAll('section[id], div[id]');
+const navIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.getAttribute('id');
+      document.querySelectorAll('.fsm-link').forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + id
+          ? 'rgba(201,168,76,.9)' : '';
+      });
+    }
+  });
+}, { threshold: 0.5 });
+sections.forEach(s => navIO.observe(s));
+
+/* Animate gold bar on section entry */
+document.querySelectorAll('.gbar').forEach(bar => {
+  bar.style.transform = 'scaleX(0)';
+  bar.style.transformOrigin = 'left';
+  bar.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1) .3s';
+  const barIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.transform = 'scaleX(1)'; barIO.unobserve(e.target); }
+    });
+  }, { threshold: .5 });
+  barIO.observe(bar);
+});
+
+console.log('%c Hotel Inter Chimoio ', 'background:#C9A84C;color:#1A1410;font-size:14px;font-weight:bold;padding:6px 14px;border-radius:3px');
+console.log('%c Website by premium web design — Chimoio, Moçambique ', 'color:#C9A84C;font-size:11px');
+</script>
+
+</body>
+</html>
